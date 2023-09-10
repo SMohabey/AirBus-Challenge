@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Upload Data</title>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Rubik:wght@500&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap CSS from a CDN. This way you don't have to include the bootstrap file yourself -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+    <!-- Your own stylesheet -->
+    <link rel="stylesheet" type="text/css" href="./static/style.css">
+</head>
+<body>
+
+    <div class="container d-flex align-items-center h-100">
+      <div class="row">
+        <header class="text-center col-12">
+          <h1 class="text-uppercase"><strong>Upload Data</strong></h1>
+        </header>
+        <div class="buffer col-12"></div>
+        <section class="text-center col-12">
+            <center><hr></center>
+      </div>
+	  <form method="POST" action="/upload_data">
+		<input type="integer" name="serial_id" placeholder="serial_id">
+		<input type="integer" name="Product_Name" placeholder="Product_Name">
+		<input type="integer" name="manufacturer" placeholder="manufacturer">
+		<input type="integer" name="material" placeholder="material">
+		<input type="integer" name="production_year" placeholder="production_year">
+		<input type="integer" name="expiration" placeholder="expiration">
+		<br><br>
+		<button type="button" onclick="submitForm()">Submit</button>
+	</form>
+    </div>
+	
+	
+	<script>
+		function submitForm() {
+			// Create a new XMLHttpRequest object
+			var xhttp = new XMLHttpRequest();
+			
+			// Set the URL of the server-side script
+			xhttp.open("POST", "upload.php", true);
+			
+			// Set the content type of the request
+			xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+			
+			// Get the form data
+			var firstName = document.getElementById("firstName").value;
+			var lastName = document.getElementById("lastName").value;
+			var email = document.getElementById("email").value;
+			
+			// Set the data to be sent to the server-side script
+			var data = "firstName=" + encodeURIComponent(firstName) + "&lastName=" + encodeURIComponent(lastName) + "&email=" + encodeURIComponent(email);
+			
+			// Send the request to the server-side script
+			xhttp.send(data);
+			
+			// Handle the server's response
+			xhttp.onreadystatechange = function() {
+				if (this.readyState == 4 && this.status == 200) {
+					alert(this.responseText);
+				}
+			};
+		}
+	</script>
+</body>
+</html>

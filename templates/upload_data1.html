@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>WINGWALKERS</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.css" />
+</head>
+
+<body>
+    <section class="hero is-primary">
+        <div class="hero-body">
+            <div class="container">
+                <h1 class="title">
+                    Add Info manually
+                </h1>
+            </div>
+        </div>
+    </section>
+
+    <section class="data_info">
+        <div class="hero-body">
+            <div class="container">
+                <form method="POST" action="/upload_data">
+                    <input type="integer" name="serial_id" placeholder="serial_id">
+                    <input type="integer" name="Product_Name" placeholder="Product_Name">
+                    <input type="integer" name="manufacturer" placeholder="manufacturer">
+                    <input type="integer" name="material" placeholder="material">
+                    <input type="integer" name="production_year" placeholder="production_year">
+                    <input type="integer" name="expiration" placeholder="expiration">
+                    <button type="submit">Enter</button>
+                </form>
+    
+    <footer class="footer">
+        <p>Data src: confidential info AIRBUS </p>
+        <p>Author: Team Wing walker</p>
+    </footer>
+</body>
+
+</html>

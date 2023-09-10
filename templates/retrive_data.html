@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Retrieve Data</title>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Rubik:wght@500&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap CSS from a CDN. This way you don't have to include the bootstrap file yourself -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+    <!-- Your own stylesheet -->
+    <link rel="stylesheet" type="text/css" href="./static/style.css">
+    </head>
+<body>
+<table class="table">
+<tr>
+    <th>INFORMATION:-</th>
+    </tr>
+
+<tr>
+    <th>Product_Name:</th>
+            <td>{{ Product_Name }}</td>
+    </tr>
+
+<tr>
+    <th>manufacturer:</th>
+            <td>{{ manufacturer }}</td>
+    </tr>
+
+<tr>
+    <th>material:</th>
+            <td>{{ material }}</td>
+    </tr>
+    
+<tr>
+    <th>production_year:</th>
+            <td>{{ production_year }}</td>
+    </tr>
+    
+<tr>
+    <th>expiration:</th>
+            <td>{{ expiration }}</td>
+    </tr>
+
+</table>
+</body>
